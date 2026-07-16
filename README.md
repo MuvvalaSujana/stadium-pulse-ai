@@ -12,7 +12,7 @@ StadiumPulse AI resolves complex logistics and communication bottlenecks at mass
 
 ## 🛠️ How It Works
 1. **Context Initialization:** The application reads structural rules and status matrices from `data/stadium_info.json`.
-2. **System Guardrails Configuration:** The underlying `gemini-1.5-flash` model is injected with instructions concerning accessibility priorities, routing configurations, and language processing rules.
+2. **System Guardrails Configuration:** The underlying `gemini-3.1-flash-lite` model is injected with instructions concerning accessibility priorities, routing configurations, and language processing rules.
 3. **Execution Pipeline:** A user submits a query via the chat UI. The engine assesses the intent against the active dataset constraints and emits situational, localized advice.
 
 ## 💡 Assumptions Made
