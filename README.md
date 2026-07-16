@@ -18,3 +18,15 @@ StadiumPulse AI resolves complex logistics and communication bottlenecks at mass
 ## 💡 Assumptions Made
 * The local stadium operational control room uploads dynamic gate metrics directly to the system's structured database storage layer.
 * Users interact using mobile devices over stadium Wi-Fi infrastructure.
+
+
+---
+
+## 👥 Author & Contact
+
+* **Author:** Muvvala Sujana  
+* **GitHub:** [@MuvvalaSujana](https://github.com/MuvvalaSujana)  
+* **LinkedIn:** [Sujana Muvvala](https://www.linkedin.com/in/sujana-muvvala-5491192b9/)  
+* **Email:** [sujanamuvvala02@gmail.com](mailto:sujanamuvvala02@gmail.com)  
+
+*Feel free to reach out if you have any questions, suggestions, or collaboration opportunities!*
