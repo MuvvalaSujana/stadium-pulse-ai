@@ -51,7 +51,7 @@ Core Operational Logic Rules:
 # Header Section
 st.markdown("<h1 style='text-align: center;'>⚽ StadiumPulse AI</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; color: #888888;'>Smart Stadium Operations & Fan Guidance System</p>", unsafe_allow_html=True)
-st.hr()
+st.divider()
 
 # Informational Live Dashboard Pills
 col1, col2, col3 = st.columns(3)
