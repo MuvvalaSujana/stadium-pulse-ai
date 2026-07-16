@@ -1,0 +1,12 @@
+# Python virtual environments
+venv/
+.env
+__pycache__/
+*.pyc
+
+# Streamlit local secrets (keys will be handled securely via cloud settings)
+.streamlit/secrets.toml
+
+# OS items
+.DS_Store
+Thumbs.db

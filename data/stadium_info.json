@@ -1,0 +1,37 @@
+{
+  "venue": "MetLife Stadium, New York/New Jersey",
+  "tournament": "FIFA World Cup 2026™",
+  "gates": {
+    "Gate A (North)": {
+      "status": "Open",
+      "congestion": "Low",
+      "wait_time_minutes": 5,
+      "best_for_sections": "100-120, 200-210",
+      "accessibility": "Standard turnstiles, flat ground entry."
+    },
+    "Gate B (East)": {
+      "status": "Congested",
+      "congestion": "Heavy",
+      "wait_time_minutes": 45,
+      "best_for_sections": "121-140, 220-235",
+      "accessibility": "Heavy crowds. Recommending alternative routing."
+    },
+    "Gate C (South-West)": {
+      "status": "Open",
+      "congestion": "Moderate",
+      "wait_time_minutes": 15,
+      "best_for_sections": "141-160, 300-320",
+      "accessibility": "Equipped with wide accessible ramps and dedicated elevator access."
+    }
+  },
+  "amenities": {
+    "elevators": "Located near Gate C and Section 114.",
+    "first_aid": "Medical stations active at Sections 108, 224, and 316.",
+    "sustainability_eco_bins": "Green recycling & compost pods situated at every food plaza. Fans earn points by scanning the bin's tournament QR code."
+  },
+  "transit_hub": {
+    "trains": "Direct rail transit service departing to Secaucus Junction every 8-10 minutes post-match.",
+    "rideshare": "Designated Uber/Lyft pickup point operational exclusively at Parking Lot E.",
+    "shuttles": "Free accessible shuttle loops running continuously between Lot P and Gate C."
+  }
+}
