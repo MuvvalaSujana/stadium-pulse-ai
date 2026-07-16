@@ -3,7 +3,14 @@ import google.generativeai as genai
 import json
 import os
 
-# --- 1. SECURE API INITIALIZATION ---
+# --- 1. MUST BE THE ABSOLUTE FIRST STREAMLIT COMMAND ---
+st.set_page_config(
+    page_title="StadiumPulse AI | FIFA World Cup 2026",
+    page_icon="⚽",
+    layout="centered"
+)
+
+# --- 2. SECURE API INITIALIZATION ---
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY") or st.secrets.get("GEMINI_API_KEY", "")
 
 if not GEMINI_API_KEY:
@@ -12,7 +19,7 @@ if not GEMINI_API_KEY:
 
 genai.configure(api_key=GEMINI_API_KEY)
 
-# --- 2. DATA LAYER LOADER ---
+# --- 3. DATA LAYER LOADER ---
 @st.cache_data
 def load_stadium_intelligence():
     try:
@@ -24,7 +31,7 @@ def load_stadium_intelligence():
 
 stadium_context = load_stadium_intelligence()
 
-# --- 3. SYSTEM INSTRUCTION ARCHITECTURE ---
+# --- 4. SYSTEM INSTRUCTION ARCHITECTURE ---
 SYSTEM_INSTRUCTION = f"""
 You are "StadiumPulse AI", the official real-time operation and experience assistant for the FIFA World Cup 2026.
 Your focus is to provide instant, precise help to fans, venue volunteers, and operational staff.
@@ -34,19 +41,13 @@ Operational Stadium Data Blueprint:
 
 Core Operational Logic Rules:
 1. Multilingual Capability: Detect the input language automatically and respond fluently in that exact language (e.g., English, Spanish, French, Arabic, German).
-2. Crowd Mitigation: If a user asks about entry or leaving via Gate B, warn them about the {stadium_context['gates']['Gate B (East)']['wait_time_minutes']} minute delay and clearly suggest routing through Gate A or Gate C depending on their target sections.
+2. Crowd Mitigation: If a user asks about entry or leaving via Gate B, warn them about the {stadium_context.get('gates', {}).get('Gate B (East)', {}).get('wait_time_minutes', 45)} minute delay and clearly suggest routing through Gate A or Gate C depending on their target sections.
 3. Accessibility First: Proactively suggest accessible pathways (like Gate C's ramps and elevators) if the user mentions strollers, wheelchairs, or limited mobility.
 4. Sustainability Promotion: Encourage green habits by highlighting eco-bins and public transit alternatives (Secaucus Junction train loops) whenever transportation or waste disposal is brought up.
 5. Keep descriptions direct, clear, and professional. Avoid lengthy commentary.
 """
 
-# --- 4. STREAMLIT INTERFACE SETUP ---
-st.set_page_config(
-    page_title="StadiumPulse AI | FIFA World Cup 2026",
-    page_icon="⚽",
-    layout="centered"
-)
-
+# --- 5. STREAMLIT INTERFACE SETUP ---
 # Header Section
 st.markdown("<h1 style='text-align: center;'>⚽ StadiumPulse AI</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; color: #888888;'>Smart Stadium Operations & Fan Guidance System</p>", unsafe_allow_html=True)
@@ -63,7 +64,7 @@ with col3:
 
 st.markdown("---")
 
-# --- 5. CHAT ENGINE & MEMORY STATE ---
+# --- 6. CHAT ENGINE & MEMORY STATE ---
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
@@ -95,4 +96,4 @@ if prompt := st.chat_input("Ask about gate access, transportation, or stadium ac
             st.session_state.chat_history.append({"role": "assistant", "content": output_text})
             
         except Exception as err:
-            st.error(f"Backend processing failure: {err}")
+            st.error(f"Backend processing failure: {err}") # Fixed JS comment to Python comment
