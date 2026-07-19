@@ -64,11 +64,11 @@ for msg in st.session_state.messages:
         st.markdown(msg["content"])
 
 # --- SEMANTIC ACCESSIBILITY INTERACTION LAYER ---
-# Moving help text to a dedicated caption directly above the input box 
-# to fix the Streamlit type validation error while keeping screen reader context.
-st.caption("ℹ️ *StadiumPulse Input Guide: Type your stadium query below and hit enter to transmit the request.*")
+# Using high-contrast status wrappers and structural instructions to maximize screen-reader parsing.
+st.write("### 💬 Submit an Operational Inquiry")
+st.info("Form Instructions: Type your tournament logistics, transit, or gate query into the chat input field below and press Enter.")
 
-user_query = st.chat_input("Ask about gates, transit, or accessibility layout...")
+user_query = st.chat_input(placeholder="Ask about gates, transit, or accessibility layouts...")
 
 if user_query:
     # Append user question to stream history
